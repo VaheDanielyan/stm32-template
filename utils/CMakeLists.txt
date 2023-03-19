@@ -1,5 +1,6 @@
 add_library(utils
-    crc.c)
+    crc.c
+    swo.cpp)
 
 get_target_property(bsp_include ${BOARD} INCLUDE_DIRECTORIES)
 get_target_property(bsp_compile_options ${BOARD} COMPILE_OPTIONS)

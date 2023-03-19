@@ -1,0 +1,9 @@
+{
+	"cortex-debug.armToolchainPath.linux": "${userHome}/.local/bin",
+	"cortex-debug.stlinkPath.linux": "/usr/bin/st-util" ,
+	"cortex-debug.stutilPath.linux": "/usr/bin/st-util",
+	"cortex-debug.openocdPath.linux": "/usr/local/bin/openocd",
+	"cmake.configureOnOpen": true,
+	"C_Cpp.errorSquiggles": "disabled",
+
+}

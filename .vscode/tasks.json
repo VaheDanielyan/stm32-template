@@ -1,0 +1,77 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Build",
+			"type": "process",
+			"command": "make",
+			"args": [
+				"-j12"
+			],
+			"options": {
+				"cwd": "${workspaceRoot}"
+			},
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"problemMatcher": [
+				"$gcc"
+			]
+		},
+		{
+			"label": "Clean",
+			"type": "process",
+			"command": "make",
+			"args": [
+				"clean"
+			],
+			"options": {
+				"cwd": "${workspaceRoot}"
+			},
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"problemMatcher": [
+				"$gcc"
+			]
+		},
+		{
+			"label": "Stflash",
+			"type": "process",
+			"command": "make",
+			"args": [
+				"st_flash"
+			],
+			"options": {
+				"cwd": "${workspaceRoot}"
+			},
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"problemMatcher": [
+				"$gcc"
+			]
+		}
+		{
+			"label": "Jflash",
+			"type": "process",
+			"command": "make",
+			"args": [
+				"jflash"
+			],
+			"options": {
+				"cwd": "${workspaceRoot}"
+			},
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"problemMatcher": [
+				"$gcc"
+			]
+		}
+	]
+}

@@ -1,0 +1,93 @@
+{
+    "version": "0.2.0",
+    "projectName": "stm32-template",
+    "configurations": [
+        {
+            "name": "STlink launch",
+            "cwd": "${workspaceRoot}",
+            "executable": "./build/bsp/default_board/default_board.elf",
+            "request": "launch",
+            "type": "cortex-debug",
+            "servertype": "openocd",
+            "device": "STM32F407VET6",
+            "configFiles": ["/usr/local/share/openocd/scripts/board/st_nucleo_f4.cfg", "/usr/local/share/openocd/scripts/interface/jlink.cfg"],
+            "interface": "swd",
+            "runToEntryPoint": "main", // else it starts at reset handler - not interested
+            "preLaunchCommands": ["make -j4"], // configured in tasks.json
+            "svdFile": "${workspaceRoot}/external/stm32-svd/svd/stm32f407.svd", // Include svd to watch device peripherals
+            "swoConfig": {
+                "enabled": true,
+                "cpuFrequency": 168000000,
+                "swoFrequency": 4000000,
+                "source": "probe",
+                "decoders":
+                [
+                    {
+                        "label": "ITM port 0 output",
+                        "type": "console",
+                        "port": 0,
+                        "showOnStartup": true,
+                        "encoding": "ascii"
+                    }
+                ]
+            } // currently (v1.7.0) not supported
+        },
+        {
+            "name": "JLink launch",
+            "cwd": "${workspaceRoot}",
+            "executable": "./build/bsp/default_board/default_board.elf",
+            "request": "launch",
+            "type": "cortex-debug",
+            "servertype": "jlink",
+            "device": "STM32F407VE",
+            "interface": "swd",
+            "runToEntryPoint": "main", // else it starts at reset handler - not interested
+            "preLaunchCommands": ["make -j"], // configured in tasks.json
+            "svdFile": "${workspaceRoot}/external/stm32-svd/svd/stm32f407.svd", // Include svd to watch device peripherals
+            "swoConfig": {
+                "enabled": true,
+                "cpuFrequency": 168000000,
+                "swoFrequency": 4000000,
+                "source": "probe",
+                "decoders":
+                [
+                    {
+                        "label": "ITM port 0 output",
+                        "type": "console",
+                        "port": 0,
+                        "showOnStartup": true,
+                        "encoding": "ascii"
+                    }
+                ]
+            } 
+        },
+        {
+            "name": "JLink Attach",
+            "cwd": "${workspaceRoot}",
+            "executable": "./build/bsp/default_board/default_board.elf",
+            "request": "attach",
+            "type": "cortex-debug",
+            "servertype": "jlink",
+            "device": "STM32F407VE",
+            "interface": "swd",
+            "runToEntryPoint": "main", // else it starts at reset handler - not interested
+            "svdFile": "${workspaceRoot}/external/stm32-svd/svd/stm32f407.svd", // Include svd to watch device peripherals
+            "swoConfig": {
+                "enabled": true,
+                "cpuFrequency": 168000000,
+                "swoFrequency": 4000000,
+                "source": "probe",
+                "decoders":
+                [
+                    {
+                        "label": "ITM port 0 output",
+                        "type": "console",
+                        "port": 0,
+                        "showOnStartup": true,
+                        "encoding": "ascii"
+                    }
+                ]
+            } 
+        },
+    ]
+}

@@ -16,7 +16,9 @@ void bsp_main()
     printf(VERSION);
     while (1) {
         static size_t counter = 0;
+        static float fl = 4.2;
         printf("Counter: %d\n", ++counter);
+        printf("Float Counter: %f\n", ++fl);
         hal::GPIO::togglePin(LED_BUILTIN_GPIO_Port, LED_BUILTIN_Pin);
         HAL_Delay(PARAMS_BLINK_RATE_MS);
     }

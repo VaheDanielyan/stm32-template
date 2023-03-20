@@ -1,6 +1,9 @@
 device STM32F407VE
 si 1
 speed 4000
-loadbin build/bsp/default_board/default_board.bin 0x8000000
+loadbin build/bsp/default_board/default_board.bin 0x08000000
+h
 r
 g
+sleep 1000
+qc

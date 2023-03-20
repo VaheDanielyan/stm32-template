@@ -11,6 +11,7 @@ set(CMAKE_CXX_EXTENSIONS ON)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 add_compile_definitions(BOARD=${BOARD})
+add_compile_options(-I${TOOLCHAIN_INCLUDE_PATH})
 
 add_subdirectory(bsp/${BOARD})
 add_subdirectory(utils)

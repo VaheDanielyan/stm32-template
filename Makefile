@@ -4,6 +4,7 @@ BUILD_DIR := build
 BUILD_TYPE ?= Debug
 MAKEFILE_DIR := $(shell pwd)
 BOARD=default_board
+TOOLCHAIN_INCLUDE_PATH=${HOME}/.local/arm-none-eabi/include
 
 all: build
 
@@ -14,7 +15,8 @@ ${BUILD_DIR}/Makefile:
 		-DCMAKE_TOOLCHAIN_FILE=${MAKEFILE_DIR}/toolchain/gcc-arm-none-eabi.cmake \
 		-DCMAKE_EXPORT_COMPILE_COMMANDS=ON \
 		-DDUMP_ASM=OFF \
-		-DBOARD=${BOARD}
+		-DBOARD=${BOARD} \
+		-DTOOLCHAIN_INCLUDE_PATH=${TOOLCHAIN_INCLUDE_PATH}
 
 cmake: ${BUILD_DIR}/Makefile
 

@@ -1,5 +1,5 @@
 add_library(${CMAKE_PROJECT_NAME}
-    ./project.cpp)
+    ./${CMAKE_PROJECT_NAME}.cpp)
 
 get_target_property(bsp_include ${BOARD} INCLUDE_DIRECTORIES)
 get_target_property(bsp_compile_options ${BOARD} COMPILE_OPTIONS)

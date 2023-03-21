@@ -24,4 +24,23 @@ Generic project template for stm32 applications.
 - Go to the top level Makefile and edit the variable ${BOARD} to match your board name
 - Go to the top level CMakeLists file and edit the project name
     - Rename the ./project folder and the project/project.* file names to match the project
+- Go to bsp/${BOARD_NAME}/Src/main.c and add "#include <bsp.h" to the User Code Includes
+- Add a call to bsp_main() before while(1) in main()
 - Done.
+
+## Flashing with jlink
+
+- Copy the jflash file from bsp/default_board into bsp/${BOARD_NAME}
+- Edit the binary name in jflash to ${BOARD_NAME}.bin
+- Edit the devie name in jflash
+
+## Debugging
+
+- Copy .vscode folder from . into the new project
+- Edit desired configurations in launch.json inside of .vscode
+    - "executable":
+    - "device":
+    - For openocd "configFiles":
+    - swo config
+    - "svdFile":
+

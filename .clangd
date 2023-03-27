@@ -1,0 +1,10 @@
+CompileFlags:
+  Add: [-I/usr/include/newlib,
+        -I/usr/local/arm-none-eabi/include/c++/10.3.1,
+        -I/usr/local/arm-none-eabi/include/c++/10.3.1/arm-none-eabi,
+        -I/usr/local/arm-none-eabi/include/c++/10.3.1/backward,
+        -I/usr/local/arm-none-eabi/10.3.1/include,
+        -I/usr/local/lib/gcc/arm-none-eabi/10.3.1/include-fixed,
+        -I/usr/local/arm-none-eabi/include]
+Index:
+  StandardLibrary: No

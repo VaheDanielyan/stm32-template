@@ -42,7 +42,7 @@
 			"type": "process",
 			"command": "make",
 			"args": [
-				"st_flash"
+				"st_flash_debug"
 			],
 			"options": {
 				"cwd": "${workspaceRoot}"
@@ -60,7 +60,7 @@
 			"type": "process",
 			"command": "make",
 			"args": [
-				"jflash"
+				"jflash_debug"
 			],
 			"options": {
 				"cwd": "${workspaceRoot}"
